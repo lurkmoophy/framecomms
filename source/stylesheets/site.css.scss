@@ -1,0 +1,118 @@
+@charset "utf-8";
+@import "normalize";
+@import "variables";
+@import "typography";
+
+* {  box-sizing: border-box; }
+
+body {
+  background: $white;
+  text-align: center;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  border: 10px solid $light-grey;
+  min-height: 100vh;
+  padding: $tscale3;
+  padding-bottom: $tscale-2;
+  @media screen and (max-width: $break-m) {
+    padding: $tscale2 $tscale-2;
+  }
+}
+
+.logo img {
+  width: 300px;
+  height: auto;
+  @media screen and (max-width: $break-m) {
+    width: 250px;
+  }
+}
+
+h1.logo-name {
+  font-size: 6em;
+  margin-top: 0;
+  padding-left: 0.3em;
+  line-height: 1;
+  margin-bottom: $tscale-3;
+  @media screen and (max-width: $break-m) {
+    padding-left: 0;
+    font-size: 5em;
+  }
+}
+
+p.home-page-description {
+  font-size: $tscale1;
+  max-width: 20em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $tscale2;
+}
+
+.button {
+  display: inline-block;
+  padding: $tscale-1 $tscale0;
+  border: 5px solid $orange;
+  font-family: $header-font;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: $orange;
+  color: $white;
+  font-weight: bold;
+
+  &:hover {
+    background: transparent;
+    color: $orange;
+  }
+
+  &.home-button {
+    margin-top: $tscale1;
+  }
+}
+
+.experience {
+  margin-top: 3em;
+  ul {
+    padding: 0;
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    @include justify-content(center);
+    li {
+      list-style-type: none;
+      margin: 1em;
+      @include flex-basis(8em);
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  margin-top: $tscale2;
+}
+
+.welcome {
+  -webkit-animation-name: welcome;
+  -webkit-animation-duration: .9s;
+}
+
+@-webkit-keyframes welcome {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+   -webkit-transform: scale(0);
+   opacity: 0;
+  }
+  82.5% {
+    -webkit-transform: scale(1.03);
+    -webkit-animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}

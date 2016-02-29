@@ -1,0 +1,234 @@
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased; 
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	font: 100%/1.5 $body-font;
+	color: $black;
+}
+
+/* Headings */
+
+@mixin heading {
+	font-family: $header-font;
+	margin-bottom: $tscale-2;
+	display: block;
+	margin-top: $tscale-2;
+	font-weight: 600;
+}
+h1 {
+	@include heading;
+	font-size: $tscale2;
+	@media screen and (min-width:$break-m) {
+		font-size: $tscale3;
+	}
+}
+h2 {
+	@include heading;
+	font-size: $tscale2;
+	@media screen and (min-width:$break-m) {
+		font-size: $tscale3;
+	}
+}
+h3 {
+	@include heading;
+	font-size: $tscale2;
+}
+h4 {
+	@include heading;
+	font-size: $tscale1;
+}
+h5 {
+	@include heading;
+	font-size: $tscale0;
+	font-style: italic;
+}
+.full-stop {
+	color: $orange;
+	font-family: 'Trebuchet MS', Arial, Sans-serif;
+}
+
+.page-header {
+	text-align: center;
+	width: 90%;
+	max-width: 20em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Paragraphs */
+
+
+p {
+	line-height: $tscale1;
+	margin: 0 auto $tscale0 auto;
+	word-break: break-all;
+	    /* Non standard for webkit */
+	    word-break: break-word;
+	    -webkit-hyphens: auto;
+	    -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	    hyphens: auto; 
+	width: 95%;
+	max-width: $measure;
+}
+
+p.lede {
+	margin: $tscale-1 0 0 0;
+	font-size: $tscale-1;
+}
+
+/* hyperlinks */
+
+a {
+	color: $yellow;
+	transition: 0.3s;
+	&:hover, &:active {
+		text-decoration: none;
+		color: $yellow;
+	}
+	&:visited {
+		color: $yellow;
+	}
+	i {
+		&:hover {
+			color: $yellow;
+		}
+	}
+}
+
+/* Styles */
+
+strong  {   font-weight: bold;  }
+em      {   font-style: italic; }
+small 	{	font-size: $tscale-2;	}
+sub, sup {
+	position: relative;
+	top: -$tscale-4;
+	font-size: $tscale-1;
+}
+sub 	{	top: $tscale-4;	}
+mark 	{	background: $yellow;	}
+
+/* Quotes */
+blockquote {
+ font-style: italic; 
+ font-size: $tscale1;
+}
+ 
+blockquote:before { 
+ content: "\201C";
+ display: inline-block;
+ padding-right: 10px;
+ font-size: $tscale1;
+ color: $yellow;
+ @media screen and (min-width: $break-m) {
+ 	font-size: $tscale3;
+ }
+}
+
+q {
+	&:before {
+		content: "\201C";
+	}
+	&:after {
+		content: "\201D";
+	}
+	q {
+		&:before {
+			content: "\2018";
+		}
+		&:after {
+			content: "\2019";
+		}
+	}
+}
+
+/* Rules */
+
+hr {
+	height: 5px;
+	background: $yellow;
+	width: 70%;
+	max-width: 30em;
+	margin: $tscale2 auto;
+	&.blog-list-hr {
+		height: 1px;
+		width: 95%;
+		max-width: $measure-big;
+		background: $grey;
+		margin: $tscale0 auto;
+	}
+}
+
+
+/* lists */
+
+ul, ol {
+	margin: 0 auto $tscale-1 auto;
+	li {
+		margin: $tscale-3 0;
+		line-height: $tscale1;
+		ul, ol {
+			padding-left: $tscale2;
+		}
+	}
+}
+
+/* Definition list */
+
+dl {
+	dt, dd {
+		margin: $tscale-3 auto;
+	}
+	dt {
+		font-family: $header-font;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: $tscale0;
+		text-decoration: underline;
+		margin-top: $tscale0;
+	}
+}
+
+/* Figures */
+
+figcaption {
+	font-style: italic;
+	color: $dark-grey;
+	margin-top: $tscale-3;
+}
+
+/* Code and such */
+
+code, samp, kbd {
+	font-size: 1.1em;
+}
+
+::-moz-selection { /* Code for Firefox */
+    background: rgba($yellow, 0.4);
+}
+
+::selection {
+    background: rgba($yellow, 0.4);
+}
+
+/* Print Styles */
+
+@media print {
+	* { background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    p, h2, h3, h4 {
+		orphans: 3;
+    	widows: 3;
+    }
+    h1, h2, h3, h4 {
+    	page-break-after: avoid;
+    }
+}
+

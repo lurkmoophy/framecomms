@@ -1,0 +1,32 @@
+@import "compass/css3";
+
+$black: rgb(60, 60, 60);
+$white: #ffffff;
+$grey: #BBBABA;
+$light-grey: lighten($grey,20%);
+$dark-grey: darken($grey,30%);
+
+$yellow: #ffd400;
+$orange: #ea9126;
+
+$accent-color: #72246C;
+
+$break-m: 600px;
+$break-l: 1200px;
+
+$body-font: 'Montserrat', Arial, sans-serif;
+$header-font: 'Montserrat', Arial, sans-serif;
+
+$tscale-4: 0.296em;
+$tscale-3: 0.444em;
+$tscale-2: 0.667em;
+$tscale-1: 0.8em;
+$tscale0: 1em;
+$tscale1: 1.5em;
+$tscale2: 2.25em;
+$tscale3: 3.375em;
+$tscale4: 5.063em;
+
+$measure-stuck: 39rem;
+$measure: 39em;
+$measure-big: 55em;
